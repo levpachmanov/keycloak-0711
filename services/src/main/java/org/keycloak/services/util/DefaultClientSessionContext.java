@@ -37,6 +37,7 @@ import org.keycloak.models.KeycloakSession;
 import org.keycloak.models.ProtocolMapperModel;
 import org.keycloak.models.RoleModel;
 import org.keycloak.models.UserModel;
+import org.keycloak.models.utils.KeycloakModelUtils;
 import org.keycloak.models.utils.RoleUtils;
 import org.keycloak.protocol.ProtocolMapperUtils;
 import org.keycloak.protocol.oidc.OIDCLoginProtocol;
@@ -127,6 +128,18 @@ public class DefaultClientSessionContext implements ClientSessionContext {
             allowedClientScopes = requestedScopes.stream().filter(this::isAllowed).collect(Collectors.toSet());
         }
         return allowedClientScopes.stream();
+    }
+
+
+    @Override
+    public boolean isOfflineTokenRequested() {
+        Boolean offlineAccessRequested = getAttribute(OAuth2Constants.OFFLINE_ACCESS, Boolean.class);
+        if (offlineAccessRequested != null) return offlineAccessRequested;
+
+        ClientScopeModel offlineAccessScope = KeycloakModelUtils.getClientScopeByName(clientSession.getRealm(), OAuth2Constants.OFFLINE_ACCESS);
+        offlineAccessRequested = offlineAccessScope == null ? false : getClientScopeIds().contains(offlineAccessScope.getId());
+        setAttribute(OAuth2Constants.OFFLINE_ACCESS, offlineAccessRequested);
+        return offlineAccessRequested;
     }
 
 
