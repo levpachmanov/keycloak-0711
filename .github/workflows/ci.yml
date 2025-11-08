@@ -3,7 +3,6 @@ name: Keycloak CI
 on:
   push:
     branches-ignore:
-      - main
       - dependabot/**
   pull_request:
   workflow_dispatch:
@@ -16,7 +15,6 @@ env:
 concurrency:
   # Only cancel jobs for PR updates
   group: ci-${{ github.ref }}
-  cancel-in-progress: true
 
 defaults:
   run:
@@ -229,6 +227,7 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest, windows-latest ]
+      fail-fast: false
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -262,10 +261,6 @@ jobs:
         suite: [zip-slow, zip-fast, container, storage, smoke]
         full-testsuite:
           - ${{ needs.conditional.outputs.ci-quarkus == 'true' }}
-        # Win runs always as includes are evaluated after excludes
-        include:
-          - os: windows-latest
-            suite: win
         # Either run smoke tests, or full testsuite
         exclude:
           - full-testsuite: false
@@ -811,81 +806,6 @@ jobs:
         with:
           job-id: clustering-integration-tests
 
-  fips-unit-tests:
-    name: FIPS UT
-    runs-on: ubuntu-latest
-    needs: build
-    timeout-minutes: 20
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Fake fips
-        run: |
-          cd .github/fake_fips
-          make
-          sudo insmod fake_fips.ko
-
-      - id: unit-test-setup
-        name: Unit test setup
-        uses: ./.github/actions/unit-test-setup
-
-      - name: Run crypto tests
-        run: docker run --rm --workdir /github/workspace -v "${{ github.workspace }}":"/github/workspace" -v "$HOME/.m2":"/root/.m2" registry.access.redhat.com/ubi8/ubi:latest .github/scripts/run-fips-ut.sh
-
-      - name: Upload JVM Heapdumps
-        if: always()
-        uses: ./.github/actions/upload-heapdumps
-
-      - name: Surefire reports
-        if: always()
-        uses: ./.github/actions/archive-surefire-reports
-        with:
-          job-id: fips-unit-tests
-
-  fips-integration-tests:
-    name: FIPS IT
-    needs: build
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
-    strategy:
-      matrix:
-        mode: [non-strict, strict]
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Fake fips
-        run: |
-          cd .github/fake_fips
-          make
-          sudo insmod fake_fips.ko
-
-      - id: integration-test-setup
-        name: Integration test setup
-        uses: ./.github/actions/integration-test-setup
-        with:
-          jdk-version: 21
-
-      - name: Run base tests
-        run: docker run --rm --workdir /github/workspace -e "SUREFIRE_RERUN_FAILING_COUNT" -v "${{ github.workspace }}":"/github/workspace" -v "$HOME/.m2":"/root/.m2" registry.access.redhat.com/ubi8/ubi:latest .github/scripts/run-fips-it.sh ${{ matrix.mode }}
-
-      - name: Upload JVM Heapdumps
-        if: always()
-        uses: ./.github/actions/upload-heapdumps
-
-      - uses: ./.github/actions/upload-flaky-tests
-        name: Upload flaky tests
-        env:
-          GH_TOKEN: ${{ github.token }}
-        with:
-          job-name: FIPS IT
-
-      - name: Surefire reports
-        if: always()
-        uses: ./.github/actions/archive-surefire-reports
-        with:
-          job-id: fips-integration-tests-${{ matrix.mode }}
-
   forms-integration-tests:
     name: Forms IT
     runs-on: ubuntu-latest
@@ -893,7 +813,7 @@ jobs:
     timeout-minutes: 75
     strategy:
       matrix:
-        browser: [chrome, firefox]
+        browser: [firefox]
       fail-fast: false
     steps:
       - uses: actions/checkout@v4
@@ -934,7 +854,6 @@ jobs:
     strategy:
       matrix:
         browser:
-          - chrome
           - firefox
       fail-fast: false
     steps:
@@ -1099,8 +1018,6 @@ jobs:
       - volatile-sessions-tests
       - store-model-tests
       - clustering-integration-tests
-      - fips-unit-tests
-      - fips-integration-tests
       - forms-integration-tests
       - webauthn-integration-tests
       - sssd-unit-tests

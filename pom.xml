@@ -60,8 +60,8 @@
         <!-- Following properties are used for downstream build to alter final distribution archive file name and internal base directory of the archive. -->
         <dist.archive.file.prefix>keycloak</dist.archive.file.prefix>
         <dist.archive.dir.prefix>${dist.archive.file.prefix}</dist.archive.dir.prefix>
-        <dist.archive.file.version>${project.version}</dist.archive.file.version>
-        <dist.archive.dir.version>${project.version}</dist.archive.dir.version>
+        <dist.archive.file.version>26.1.4</dist.archive.file.version>
+        <dist.archive.dir.version>26.1.4</dist.archive.dir.version>
         <dist.archive.file>${dist.archive.file.prefix}-${dist.archive.file.version}</dist.archive.file>
         <dist.archive.dir>${dist.archive.dir.prefix}-${dist.archive.dir.version}</dist.archive.dir>
 
@@ -230,7 +230,7 @@
         <!-- Properties that drive the names of various directories produced by and used in the build -->
         <server.output.dir.prefix>keycloak</server.output.dir.prefix>
         <!-- Version suffix that is appended to directories. Default is the maven GAV version but this can be edited to use a short form version -->
-        <server.output.dir.version>${project.version}</server.output.dir.version>
+        <server.output.dir.version>26.1.4</server.output.dir.version>
 
         <!-- Set to true on release to update proto.lock files -->
         <commitProtoLockChanges>false</commitProtoLockChanges>
@@ -871,182 +871,182 @@
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-client-registration-api</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-common</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-core</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-core</artifactId>
                 <type>test-jar</type>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-config-api</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-client-api</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-kerberos-federation</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <!-- Dependencies for RHEL IdM -->
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-sssd-federation</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-ldap-federation</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-ipatuura-federation</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-dependencies-server-min</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
                 <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-dependencies-server-all</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
                 <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-themes</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-themes-vendor</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-adapter-spi</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-admin-client-jee-tests</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-admin-client-tests</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-jboss-adapter-core</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-saml-wildfly-elytron-adapter</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-server-spi</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-server-spi-private</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-model-jpa</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-model-storage</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-model-storage-private</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-model-storage-services</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-model-infinispan</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>launcher</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-saml-core</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-saml-core-public</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-saml-adapter-api-public</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-saml-adapter-core</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-saml-adapter-galleon-pack</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
                 <type>zip</type>
             </dependency>
            <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-saml-wildfly-subsystem</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-services</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4+sp1</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-services</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4+sp1</version>
                 <type>test-jar</type>
             </dependency>
 
@@ -1054,120 +1054,120 @@
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-authz-client-tests</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-authz-policy-common</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
 
             <!-- Quarkus -->
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-quarkus-server</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-quarkus-server-deployment</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-quarkus-server-app</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-junit5</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-account-ui</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-admin-ui</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-rest-admin-ui-ext</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-saml-wildfly-modules</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
                 <type>zip</type>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-quarkus-dist</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
                 <type>zip</type>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-util-embedded-ldap</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-api-docs-dist</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
                 <type>zip</type>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-server-feature-pack</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
                 <type>zip</type>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-testsuite-utils</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-testsuite-tools</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-testsuite-tools</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
                 <classifier>classes</classifier>
             </dependency>
 
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-crypto-default</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-crypto-fips1402</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-crypto-elytron</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-admin-cli</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
             </dependency>
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-client-cli-dist</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
                 <type>zip</type>
             </dependency>
             <!-- webauthn support -->
@@ -1196,14 +1196,14 @@
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-server-galleon-pack</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
                 <type>zip</type>
             </dependency>
 
             <dependency>
                 <groupId>org.keycloak</groupId>
                 <artifactId>keycloak-server-galleon-pack</artifactId>
-                <version>${project.version}</version>
+                <version>26.1.4</version>
                 <type>pom</type>
             </dependency>
 
@@ -1465,7 +1465,7 @@
                 <plugin>
                     <groupId>org.keycloak</groupId>
                     <artifactId>keycloak-distribution-licenses-maven-plugin</artifactId>
-                    <version>${project.version}</version>
+                    <version>26.1.4</version>
                     <executions>
                         <execution>
                             <id>process-licenses</id>

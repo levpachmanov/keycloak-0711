@@ -27,6 +27,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>keycloak-services</artifactId>
+    <version>26.1.4+sp1</version>
     <name>Keycloak REST Services</name>
     <description/>
 
@@ -38,16 +39,19 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-core</artifactId>
+            <version>26.1.4</version>
         </dependency>
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-core</artifactId>
+            <version>26.1.4</version>
             <scope>test</scope>
             <type>test-jar</type>
         </dependency>
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>${keycloak.crypto.artifactId}</artifactId>
+            <version>26.1.4</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -66,15 +70,18 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-common</artifactId>
+            <version>26.1.4</version>
         </dependency>
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-server-spi</artifactId>
+            <version>26.1.4</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-server-spi-private</artifactId>
+            <version>26.1.4</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -190,11 +197,13 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-saml-core-public</artifactId>
+            <version>26.1.4</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-saml-core</artifactId>
+            <version>26.1.4</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -250,10 +259,12 @@
         <dependency>
             <groupId>org.keycloak</groupId>
             <artifactId>keycloak-model-storage-private</artifactId>
+            <version>26.1.4</version>
         </dependency>
         <dependency>
         	<groupId>org.keycloak</groupId>
         	<artifactId>keycloak-config-api</artifactId>
+            <version>26.1.4</version>
         </dependency>
     </dependencies>
     <build>
